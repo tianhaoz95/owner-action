@@ -1,0 +1,14 @@
+name: 'Owner Action'
+description: 'GitHub Action to define code ownership with macros.'
+inputs:
+  changed-files:
+    description: 'The JSON file that contains the changed files by a pull request. See https://github.com/marketplace/actions/get-changed-files for details.'
+    required: true
+    default: '${HOME}/files.json'
+  ownership-rules:
+    description: 'The configuration file that defines how ownership should work.'
+    required: true
+    default: '.github/owner-action-config.yml'
+runs:
+  using: 'node12'
+  main: 'index.js'
